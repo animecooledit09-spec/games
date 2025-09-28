@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <style>
+    body { text-align:center; font-family:sans-serif; margin-top:30px; }
+    table { margin:auto; }
+    td { width:80px; height:80px; border:2px solid black; font-size:30px; cursor:pointer; text-align:center; }
+    #winner { margin-top:20px; font-size:22px; }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe ❌⭕</h1>
+  <table>
+    <tr><td onclick=\"makeMove(this)\"></td><td onclick=\"makeMove(this)\"></td><td onclick=\"makeMove(this)\"></td></tr>\n    <tr><td onclick=\"makeMove(this)\"></td><td onclick=\"makeMove(this)\"></td><td onclick=\"makeMove(this)\"></td></tr>\n    <tr><td onclick=\"makeMove(this)\"></td><td onclick=\"makeMove(this)\"></td><td onclick=\"makeMove(this)\"></td></tr>\n  </table>\n  <p id=\"winner\"></p>\n\n  <script>\n    let current = 'X';\n    function makeMove(cell){\n      if(cell.innerText===''){\n        cell.innerText=current;\n        if(checkWin()){\n          document.getElementById('winner').innerText=`${current} Wins!`;\n        } else {\n          current=current==='X'?'O':'X';\n        }\n      }\n    }\n\n    function checkWin(){\n      const cells = document.getElementsByTagName('td');\n      const combos=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];\n      return combos.some(c => cells[c[0]].innerText===current && cells[c[1]].innerText===current && cells[c[2]].innerText===current);\n    }\n  </script>\n</body>\n</html>\n```  \n\n---\n\n⚡ Tu inko apne **portfolio projects** me add kar sakta hai. Bas project-card banake GitHub + Live link daal dena.  \n\n👉 Buddy, kya tu chahta hai main tere portfolio ke liye ek **Games Section** bana kar ready HTML code bana du (Rock Paper Scissors, Snake, Tic Tac Toe cards ke sath)?
